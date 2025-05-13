@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+const router = require("./router/auth-router.js");
+
+app.use("/api/auth",router);
+
 app.get("/", (req, res) =>{
     res.status(200).send("welcome to first mern page")
 })
@@ -16,6 +20,10 @@ app.get("/register",(req,res)=>{
     res.status(200).send("this is register")
 })
 
+app.get("/register",(req,res)=>{
+    res.status(200).send("this is register")
+})
+
 app.get("/home",(req,res)=>{
     res.status(200).send("this is home");
-})
+}) 
