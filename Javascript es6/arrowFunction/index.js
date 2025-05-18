@@ -20,7 +20,7 @@ const greet = (name) =>{
     return `Hello, ${name}`;
 }
 
-console.log(greet());
+console.log(greet("dilan"));
 
 // question no 4
 const es = ()=>{
@@ -64,6 +64,9 @@ console.log(isEven(6))
 // filter
 const arr = [5,12,8,130,33]
 
+// const filterArr = arr.filter((x) => x > 10);
+// we can do this like this too 
+
 const filterArr = arr.filter((x)=>{
     return x>10;
 })
@@ -81,12 +84,17 @@ console.log(wordArr);
 
 // arrowfunction that return another arrow function to multiply a number 
 
-const double = (x) =>{
-    const mul = (x)=>{
-        return x * x; 
-    }
-}
-console.log(double);
+// const double = (x) =>{ this was donw by me so it's incorrect 
+//     const mul = (x)=>{
+//         return x * x; 
+//     }
+// }
+
+// this is correct one
+const multiply = (x)=> (y)=> x*y;
+
+const double = multiply(2)
+console.log(double(5));
 // i don;t understand this so help me when u are checking the code okie 
 
 
@@ -105,10 +113,53 @@ console.log(person.greet());
 const personAgain = {
     name: 'Potato',
     greet: function(){
-        `Hi,I'm ${this.name}`
+         return `Hi,I'm ${this.name}`
     }
 };
 console.log(personAgain.greet());
 // i don't understand this one too maybe i didn't undersand the question all i undersand was i need to change arrow function to normal one 
 
 // please check everyone of it and tell me where can i improve and u can drop some question too if u think i need to do or if this is enough 
+
+
+
+// followup practices 
+
+// write a function getOddNumbers(arr) using .filter();
+
+const arrOfn = [2,3,4,5,6,7,8];
+
+const oddNumber = arrOfn.filter((x)=>{
+    return x%2==1;
+})
+
+console.log(oddNumber);
+
+
+// question no 2
+
+const arrOfName = ["potato","amelia","amy","banana"];
+
+const startWithA = arrOfName.filter((a) =>{
+    if(a[0]==="a"){
+        return a;
+    }
+    else{
+        return "";
+    }
+})
+
+console.log(startWithA);
+
+
+// question no 3 rewrite the function
+
+const mult = (a,b)=>{
+    return a*b;
+}
+console.log(mult(9,2));
+
+const isPositive = (n)=>{
+    return n>0;
+}
+console.log(isPositive(4));
